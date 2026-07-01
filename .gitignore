@@ -1,0 +1,12 @@
+# Next.js
+task-2-nextjs/.next/
+task-2-nextjs/out/
+task-2-nextjs/node_modules/
+
+# Environment files — never commit secrets
+task-2-nextjs/.env.local
+task-2-nextjs/.env*.local
+
+# OS
+.DS_Store
+Thumbs.db
