@@ -60,12 +60,12 @@ export default async function HomePage() {
       {/* 5-column card grid — vertical dividers between cards */}
       {!error && articles.length > 0 && (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-8">
-          {articles.map((article, index) => (
-            <div key={article.url} className="px-4 first:pl-0 last:pr-0">
-              <NewsCard
-                article={article}
-                isLast={index === articles.length - 1}
-              />
+          {articles.map((article) => (
+            <div
+              key={article.url}
+              className="border-r border-gray-300 last:border-r-0 pr-4 pl-4 first:pl-0"
+            >
+              <NewsCard article={article} />
             </div>
           ))}
         </div>
