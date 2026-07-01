@@ -3,9 +3,10 @@ import type { Article } from "@/types/news";
 
 interface NewsCardProps {
   article: Article;
+  isLast?: boolean;
 }
 
-export default function NewsCard({ article }: NewsCardProps) {
+export default function NewsCard({ article, isLast = false }: NewsCardProps) {
   const { title, author, urlToImage, url, source } = article;
 
   const displayAuthor = author
@@ -19,8 +20,8 @@ export default function NewsCard({ article }: NewsCardProps) {
       rel="noopener noreferrer"
       className="group flex flex-col gap-3"
     >
-      {/* Thumbnail */}
-      <div className="relative w-full aspect-[4/3] bg-gray-100 overflow-hidden border-b border-gray-300">
+      {/* Thumbnail — border-r only on image (not text), border-b separates image from text */}
+      <div className={`relative w-full aspect-[4/3] bg-gray-100 overflow-hidden border-b border-gray-300 ${!isLast ? "border-r border-gray-300" : ""}`}>
         {urlToImage ? (
           <Image
             src={urlToImage}
