@@ -57,11 +57,16 @@ export default async function HomePage() {
         <p className="text-sm text-gray-500">No articles found.</p>
       )}
 
-      {/* 5-column card grid */}
+      {/* 5-column card grid — vertical dividers between cards */}
       {!error && articles.length > 0 && (
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-8">
           {articles.map((article) => (
-            <NewsCard key={article.url} article={article} />
+            <div
+              key={article.url}
+              className="border-r border-gray-300 last:border-r-0 pr-4 pl-4 first:pl-0"
+            >
+              <NewsCard article={article} />
+            </div>
           ))}
         </div>
       )}

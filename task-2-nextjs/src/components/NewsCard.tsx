@@ -20,7 +20,7 @@ export default function NewsCard({ article }: NewsCardProps) {
       className="group flex flex-col gap-3"
     >
       {/* Thumbnail */}
-      <div className="relative w-full aspect-[4/3] bg-gray-100 overflow-hidden">
+      <div className="relative w-full aspect-[4/3] bg-gray-100 overflow-hidden border-b border-gray-300">
         {urlToImage ? (
           <Image
             src={urlToImage}
